@@ -36,5 +36,22 @@ describe AssignedSubclass do
 
       expect(sub.new.hoge).to be :hoge!
     end
+
+    it do
+      class ::Boo
+        extend AssignedSubclass
+      end
+      k = ::Boo.subclass("hoge") do
+        def hoge
+          :yellow
+        end
+      end.subclass("another") do
+        def hoge
+          super.to_s + " blue"
+        end
+      end
+
+      expect(k.new.hoge).to eq('yellow blue')
+    end
   end
 end
