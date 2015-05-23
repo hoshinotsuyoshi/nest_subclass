@@ -1,8 +1,6 @@
 module AssignedSubclass
   def subclass(name, &block)
-    c = Class.new(self) do
-      class_eval &block if block
-    end
+    c = Class.new(self, &block)
     self.const_set(:"#{name.capitalize}", c)
   end
 end
