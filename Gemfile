@@ -1,5 +1,4 @@
-# A sample Gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "rspec"
-gem "pry"
+# Specify your gem's dependencies in nest_subclass.gemspec
+gemspec

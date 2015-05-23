@@ -1,4 +1,3 @@
-require 'pry'
 require 'nest_subclass'
 
 describe NestSubclass do
