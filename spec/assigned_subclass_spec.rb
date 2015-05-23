@@ -21,5 +21,13 @@ describe AssignedSubclass do
   it do
     expect(@subclass_2.superclass).to be Foo::Hoge
   end
+
+  it do
+    class ::Bar
+      extend AssignedSubclass
+    end
+    subclass = ::Bar.subclass("hoge")
+    expect(subclass.new.hoge).to be :hoge!
+  end
 end
 
