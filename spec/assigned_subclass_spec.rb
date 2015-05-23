@@ -53,5 +53,27 @@ describe AssignedSubclass do
 
       expect(k.new.hoge).to eq('yellow blue')
     end
+
+    it do
+      expect do
+        k = nil
+        2.times do
+          class ::Too
+            extend AssignedSubclass
+          end
+          k = ::Too.subclass("hoge") do
+            def hoge
+              :green
+            end
+          end.subclass("another") do
+            def hoge
+              super.to_s + " blue"
+            end
+          end
+        end
+
+        expect(k.new.hoge).to eq('green blue')
+      end.to output(/warning/).to_stderr
+    end
   end
 end
