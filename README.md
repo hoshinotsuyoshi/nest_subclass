@@ -1,5 +1,7 @@
 # NestSubclass
 
+[![Build Status](https://travis-ci.org/hoshinotsuyoshi/nest_subclass.svg)](https://travis-ci.org/hoshinotsuyoshi/nest_subclass)
+
 `NestSubclass#subclass` creates a subclass nested by self
 
 ## Usage
