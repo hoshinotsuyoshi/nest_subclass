@@ -1,0 +1,2 @@
+module AssignedSubclass
+end
