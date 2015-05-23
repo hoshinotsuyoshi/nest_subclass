@@ -1,10 +1,8 @@
 module AssignedSubclass
-  def subclass(name)
-    c = Class.new(self) do
-      def hoge
-        :hoge!
-      end
-    end
-    self.const_set(:"#{name.capitalize}", c)
+  def subclass(name, ruby = '')
+    c = Class.new(self)
+    c = self.const_set(:"#{name.capitalize}", c)
+    c.class_eval ruby
+    c
   end
 end
