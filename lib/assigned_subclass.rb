@@ -1,9 +1,6 @@
 module AssignedSubclass
   def subclass(a)
     c = Class.new(self)
-    def c.name
-      'Foo::Hoge' #+ self.capitalize
-    end
-    c
+    self.const_set(:Hoge, c)
   end
 end

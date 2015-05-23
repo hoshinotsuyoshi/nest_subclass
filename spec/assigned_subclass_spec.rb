@@ -2,7 +2,7 @@ require 'pry'
 require 'assigned_subclass'
 
 describe AssignedSubclass do
-  before do
+  before(:all) do
     class ::Foo
       extend AssignedSubclass
     end
