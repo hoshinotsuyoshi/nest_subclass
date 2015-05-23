@@ -26,12 +26,13 @@ describe AssignedSubclass do
     class ::Bar
       extend AssignedSubclass
     end
-    ruby = <<-RUBY
+
+    sub = ::Bar.subclass("hoge") do
       def hoge
         :hoge!
       end
-    RUBY
-    sub = ::Bar.subclass("hoge", ruby)
+    end
+
     expect(sub.new.hoge).to be :hoge!
   end
 end
