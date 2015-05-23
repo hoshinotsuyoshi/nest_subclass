@@ -12,5 +12,9 @@ describe AssignedSubclass do
   it do
     expect(@subclass.name).to eq("Foo::Hoge")
   end
+
+  it do
+    expect(@subclass.superclass).to be Foo
+  end
 end
 

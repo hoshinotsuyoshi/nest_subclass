@@ -1,8 +1,9 @@
 module AssignedSubclass
   def subclass(a)
-    def a.name
-      'Foo::' + self.capitalize
+    c = Class.new(self)
+    def c.name
+      'Foo::Hoge' #+ self.capitalize
     end
-    a
+    c
   end
 end
