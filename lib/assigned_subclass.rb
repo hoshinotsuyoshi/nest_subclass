@@ -1,8 +1,7 @@
 module AssignedSubclass
-  def subclass(*args)
-    a = ''
+  def subclass(a)
     def a.name
-      'Foo::Hoge'
+      'Foo::' + self.capitalize
     end
     a
   end
